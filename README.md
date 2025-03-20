@@ -13,8 +13,6 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 ## EXAMPLE:
 
-
-
 ![image](https://github.com/Hemamanigandan/CNS/assets/149653568/eb9c6c43-8c80-4cdd-b9d4-91705a311c79)
 
 
@@ -26,9 +24,45 @@ becomes C. To change a message back, each letter is replaced by the one three be
 ### STEP-4: Else subtract the key from the plain text.
 ### STEP-5: Display the cipher text obtained above.
 
+## PROGRAM:
+```
+Name: Jayakumar B
+Register nymber: 212223040073
+```
 
-PROGRAM :-
+```PY
+def caesar_cipher(text, key, encrypt=True):
+    result = ""
+    
+    for char in text:
+        if char.isalpha():
+            shift = key if encrypt else -key
+            base = ord('A') if char.isupper() else ord('a')
+            result += chr((ord(char) - base + shift) % 26 + base)
+        else:
+            result += char
+    
+    return result
 
 
+# Get user input
 
-OUTPUT :-
+plain_text = input("Enter the plain text: ")
+
+key = int(input("Enter the key value: "))
+
+# Encryption
+encrypted_text = caesar_cipher(plain_text, key)
+
+# Print plain text first, then encrypted text
+print("\nPlain Text:", plain_text)
+print("\nEncrypted Text:", encrypted_text)
+
+```
+
+## OUTPUT :
+
+![image](https://github.com/user-attachments/assets/719b20c6-1234-4a72-b79e-f7f47a0b4086)
+
+## RESULT :
+    Thus the program for Caesar Cipher is implemented successfully.
